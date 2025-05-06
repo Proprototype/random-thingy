@@ -1,2 +1,73 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+// area loop ask.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Lee Yan De P2510583 1B/21
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <cctype>
+
+#define PI 3.14159265
+
+using namespace std;
+
+int main()
+{
+    double s, r, b, h;
+    char choice;
+    char again;
+
+    cout << fixed << setprecision(3);  // Set precision for all outputs
+
+    do {
+        cout << "\nArea Calculator\n";
+        cout << "***************\n";
+        cout << "[S]quare, [C]ircle, [T]riangle or [Q]uit? ";
+        cin >> choice;
+        choice = tolower(choice);
+
+        if (choice == 's') { // calc square
+            cout << "Enter the length of the side of the square: ";
+            cin >> s;
+            cout << "Area of Square with side = " << s << " is " << s * s << endl;
+        }
+        else if (choice == 'c') { // calc circle
+            cout << "Enter the radius of the circle: ";
+            cin >> r;
+            cout << "Area of Circle with radius = " << r << " is " << PI * r * r << endl;
+        }
+        else if (choice == 't') { // calc triangle
+            cout << "Enter the base length of the triangle: ";
+            cin >> b;
+            cout << "Enter the height of the triangle: ";
+            cin >> h;
+            cout << "Area of Triangle with base = " << b << " and height = " << h << " is " << 0.5 * b * h << endl;
+        }
+        else if (choice == 'q') {
+            cout << "Exiting program. Goodbye!\n";
+            break;
+        }
+        else {
+            cout << "Invalid choice. Please enter S, C, T, or Q.\n";
+        }
+
+        cout << "\nWould you like to calculate another area? (y/n): ";
+        cin >> again;
+
+    } while (tolower(again) == 'y');
+
+    return 0;
+}
+
+
+// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
+// Debug program: F5 or Debug > Start Debugging menu
+
+// Tips for Getting Started: 
+//   1. Use the Solution Explorer window to add/manage files
+//   2. Use the Team Explorer window to connect to source control
+//   3. Use the Output window to see build output and other messages
+//   4. Use the Error List window to view errors
+//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
+//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
